@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_margin="16dp"
+    tools:context=".MainActivity">
+
+    <!-- Botones posicionados de forma relativa -->
+    <Button
+        android:id="@+id/addComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:text="Write" />
+
+    <Button
+        android:id="@+id/editArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/addComment"
+        android:text="Edit" />
+
+    <Button
+        android:id="@+id/publishArticle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/editArticle"
+        android:text="Save"
+        android:visibility="invisible" />
+
+    <Button
+        android:id="@+id/publishComment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="10dp"
+        android:layout_toRightOf="@id/addComment"
+        android:text="Save"
+        android:visibility="invisible" />
+
+    <!-- ScrollView ajustado a la pantalla completa menos los botones -->
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_above="@id/addComment"
+        android:layout_alignParentTop="true"
+        android:layout_marginTop="36dp">
+
+        <LinearLayout
+            android:id="@+id/textContainer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:id="@+id/articleContainer"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/heading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@color/md_theme_primaryContainer"
+                    android:padding="10dp"
+                    android:text="@string/heading"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/subHeading"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="28dp"
+                    android:background="@color/md_theme_secondaryContainer"
+                    android:padding="10dp"
+                    android:text="@string/subHeading"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:id="@+id/article"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:autoLink="web"
+                    android:background="@color/md_theme_secondaryContainer"
+                    android:justificationMode="inter_word"
+                    android:lineSpacingExtra="5sp"
+                    android:text="@string/article"
+                    android:textColor="@color/md_theme_onSecondaryContainer" />
+
+                <LinearLayout
+                    android:id="@+id/commentContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical"
+                    android:visibility="invisible"/>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
+
+</RelativeLayout>

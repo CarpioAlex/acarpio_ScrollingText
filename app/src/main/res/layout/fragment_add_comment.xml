@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/fragmentContainer"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/md_theme_tertiaryContainer"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <EditText
+        android:id="@+id/frUserName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginBottom="16dp"
+        android:hint="Username"
+        android:maxLength="20"
+        android:textColor="@color/md_theme_onTertiary" />
+
+    <EditText
+        android:id="@+id/frTitle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:hint="Title"
+        android:maxLength="20"
+        android:textColor="@color/md_theme_onTertiary" />
+
+    <EditText
+        android:id="@+id/frAddComment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:gravity="top"
+        android:hint="Write your comment here..."
+        android:inputType="textMultiLine"
+        android:lines="4"
+        android:maxLength="200"
+
+        android:textColor="@color/md_theme_onTertiary" />
+
+    <TextView
+        android:id="@+id/charContador"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+</LinearLayout>
