@@ -1,8 +1,8 @@
 <resources>
     <string name="app_name">acarpio_ScrollingText</string>
 
-    <string name="heading">Scrolling Text</string>
-    <string name="subHeading">Scrolling Text</string>
+    <string name="heading">Article Title : Beatles something</string>
+    <string name="subHeading">Subtitle</string>
 
 
     <string name="article">

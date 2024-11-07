@@ -8,67 +8,67 @@
     android:layout_margin="16dp"
     tools:context=".MainActivity">
 
-    <!-- Botones posicionados de forma relativa -->
-    <Button
-        android:id="@+id/addComment"
-        android:layout_width="wrap_content"
+    <!-- Botones en la parte inferior -->
+    <LinearLayout
+        android:id="@+id/buttonContainer"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="10dp"
-        android:text="Write" />
+        android:orientation="horizontal"
+        android:gravity="center">
 
-    <Button
-        android:id="@+id/editArticle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/addComment"
-        android:text="Edit" />
+        <Button
+            android:id="@+id/addComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="Write" />
 
-    <Button
-        android:id="@+id/publishArticle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/editArticle"
-        android:text="Save"
-        android:visibility="invisible" />
+        <Button
+            android:id="@+id/publishComment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="Save C"
+            android:visibility="invisible" />
 
-    <Button
-        android:id="@+id/publishComment"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_marginRight="8dp"
-        android:layout_marginBottom="10dp"
-        android:layout_toRightOf="@id/addComment"
-        android:text="Save"
-        android:visibility="invisible" />
+        <Button
+            android:id="@+id/editArticle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="8dp"
+            android:text="Edit" />
 
-    <!-- ScrollView ajustado a la pantalla completa menos los botones -->
+        <Button
+            android:id="@+id/publishArticle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Save"
+            android:visibility="invisible" />
+    </LinearLayout>
+
+    <!-- ScrollView con dos columnas -->
     <ScrollView
         android:id="@+id/scrollView"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_above="@id/addComment"
+        android:layout_above="@id/buttonContainer"
         android:layout_alignParentTop="true"
         android:layout_marginTop="36dp">
 
-        <LinearLayout
-            android:id="@+id/textContainer"
+        <GridLayout
+            android:id="@+id/articleContainer"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:columnCount="2"
+            android:orientation="horizontal">
 
+            <!-- Primera columna -->
             <LinearLayout
-                android:id="@+id/articleContainer"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:id="@+id/leftColumn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="1"
                 android:orientation="vertical">
 
                 <TextView
@@ -89,6 +89,15 @@
                     android:padding="10dp"
                     android:text="@string/subHeading"
                     android:textStyle="bold" />
+            </LinearLayout>
+
+            <!-- Segunda columna -->
+            <LinearLayout
+                android:id="@+id/rightColumn"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_columnWeight="3"
+                android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/article"
@@ -104,13 +113,12 @@
                 <LinearLayout
                     android:id="@+id/commentContainer"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
+                    android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:visibility="invisible"/>
-
+                    android:visibility="visible" />
             </LinearLayout>
 
-        </LinearLayout>
+        </GridLayout>
     </ScrollView>
 
 </RelativeLayout>
